@@ -157,5 +157,15 @@ simple_rnn_model = simple_model(
     french_vocab_size)
 simple_rnn_model.fit(tmp_x, preproc_french_sentences, batch_size=16, epochs=10, validation_split=0.2)
 
+
 # Print prediction(s)
 print(logits_to_text(simple_rnn_model.predict(tmp_x[:1])[0], french_tokenizer))
+
+
+# serialize model to YAML
+model_yaml = simple_rnn_model.to_yaml()
+with open("model.yaml", "w") as yaml_file:
+    yaml_file.write(model_yaml)
+# serialize weights to HDF5
+model.save_weights("model.h5")
+print("Saved model to disk")
