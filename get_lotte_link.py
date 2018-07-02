@@ -11,18 +11,18 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support import expected_conditions as EC
 
 lst_data =[]
-
-driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\phantomjs.exe')
+#driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\phantomjs.exe')
+driver = webdriver.Chrome(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\chromedriver.exe')
 def fun_extract_link(page_url):
     driver.get(page_url)
 
-    driver.save_screenshot('lotte_1.png');
+    #driver.save_screenshot('lotte_1.png');
 
     # timeout = 10
     # print("waiting %s seconds..." % timeout)
     # wait = WebDriverWait(driver, timeout)
     # list_product = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'div.main')))
-    print("done waiting. Response:")
+    print("done waiting. Response: " + page_url)
 
     int_count = 0
 
