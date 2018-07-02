@@ -11,8 +11,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support import expected_conditions as EC
 
 lst_data =[]
+
+chromeOptions = webdriver.ChromeOptions()
+prefs = {"profile.managed_default_content_settings.images":2}
+chromeOptions.add_experimental_option("prefs",prefs)
 #driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\phantomjs.exe')
-driver = webdriver.Chrome(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\chromedriver.exe')
+driver = webdriver.Chrome(chrome_options=chromeOptions,service_args=['--ignore-ssl-errors=true', '--ssl-protocol=TLSv1'],executable_path='C:\phantomjs\chromedriver.exe')
 def fun_extract_link(page_url):
     driver.get(page_url)
 
