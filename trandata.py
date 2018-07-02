@@ -167,5 +167,5 @@ model_yaml = simple_rnn_model.to_yaml()
 with open("model.yaml", "w") as yaml_file:
     yaml_file.write(model_yaml)
 # serialize weights to HDF5
-model.save_weights("model.h5")
+simple_rnn_model.save_weights("model.h5")
 print("Saved model to disk")
