@@ -25,14 +25,14 @@ def fun_extract_link(page_url):
     timeout = 10
     print("waiting %s seconds..." % timeout)
     wait = WebDriverWait(driver, timeout)
-    list_product = wait.until(EC.visibility_of(driver.find_element_by_class_name("products-list")))
+    wait.until(EC.visibility_of_element_located((By.CLASS_NAME,'products-list')))
 
     driver.save_screenshot('images/'+page_url+'lotte_1.png');
     print("done waiting. Response: " + page_url)
 
     int_count = 0
 
-    list_product = driver.find_element_by_class_name('main')
+    list_product = driver.find_element_by_class_name('products-list')
 
     if list_product is None:
         print("item is None")
