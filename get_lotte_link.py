@@ -51,7 +51,7 @@ def fun_extract_link(page_url):
 
 url="https://www.lotte.vn/category/170/suc-khoe-lam-dep?page="
 
-for item in range(1,500):
+for item in range(1,5000):
     cur_url = url+str(item)
     print(cur_url)
     if fun_extract_link(cur_url)  <=0:
