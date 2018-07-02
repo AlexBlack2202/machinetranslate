@@ -25,7 +25,7 @@ def fun_extract_link(page_url):
     timeout = 10
     print("waiting %s seconds..." % timeout)
     wait = WebDriverWait(driver, timeout)
-    list_product = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'div.main')))
+    list_product = wait.until(EC.visibility_of((By.CLASS_NAME,'div.main')))
 
     driver.save_screenshot('images/'+page_url+'lotte_1.png');
     print("done waiting. Response: " + page_url)
